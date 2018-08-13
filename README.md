@@ -31,6 +31,15 @@ To authenticate with the API you'll need to set an `authtoken` header and pass t
 * **GET /student** - Returns the currently authenticated student.
 * **PATCH /student** - Updates the currently authenticated student.
 
+```
+{
+    firstName: "Test",
+    lastName: "Name",
+    email: "test@hatch.team",
+    availability: true
+}
+```
+
 ### Libraries & Frameworks
 
 You are free to use whatever libraries and frameworks alongside React that will help you accomplish the task.
