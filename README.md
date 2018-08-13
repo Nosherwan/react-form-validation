@@ -46,7 +46,9 @@ You are free to use whatever libraries and frameworks alongside React that will 
 
 ### Submitting
 
-Please submit your work by sharing your repository with us on Github.
+Please submit your work by sharing your *private* repository with us on Github, Bitbucket or similiar.
+- GitHub Users: @thejuan @samturner
+- Bitbucket Users: AdamMills samturner23
 
 ### Help!
 
