@@ -6,7 +6,7 @@ Hi and welcome to the Hatch Engineering technical test. The purpose of this task
 
 ## The Problem
 
-At Hatch we use data science to automatically match students to professional roles. We always want the student to keep their availability up-to-date. As we are only want to be showing roles to available students and available students to hiring managers 
+At Hatch we use data science to automatically match students to professional roles. We always want the student to keep their availability up-to-date. As we only want to be showing roles to available students and available students to hiring managers 
 
 ## The Task
 
