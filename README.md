@@ -44,6 +44,10 @@ To authenticate with the API you'll need to set an `authtoken` header on all req
 
 You are free to use whatever libraries and frameworks alongside React that will help you accomplish the task.
 
+### Design & Styling
+
+Refer to https://www.hatch.team/design to get an idea of some of the components we use in our Design Language. Use our Design Language to pull out styles (colours, font sizes, etc). Don't worry too much about getting all our colours and spacing exactly right, the way you structure your styles is much more important!
+
 ### Submitting
 
 Please submit your work by sharing your *private* repository with us on Github, Bitbucket or similiar.
