@@ -24,7 +24,7 @@ The API is a simple one that allows you to get a student object and update it.
 
 ### Authentication
 
-To authenticate with the API you'll need to set an `authtoken` header on all requests and pass the key you will have been given as the value. This key identifies a single student (you).
+To authenticate with the API you'll need to set an `Authorization` header on all requests and pass the key you will have been given as the value. This key identifies a single student (you).
 
 ### Endpoints
 
