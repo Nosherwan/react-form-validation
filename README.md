@@ -36,7 +36,7 @@ To authenticate with the API you'll need to set an `Authorization` header on all
     firstName: "Test",
     lastName: "Name",
     email: "test@hatch.team",
-    availability: true
+    available: true
 }
 ```
 
