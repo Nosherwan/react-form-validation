@@ -1,0 +1,16 @@
+{
+  "LT.TSLint.version": "1.2",
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "brace-style": ["error", "1tbs"],
+    "interface-name": false,
+    "no-console": false,
+    "object-literal-sort-keys": false,
+    "no-unused-variable": true
+  },
+  "rulesDirectory": ["tslint-plugin-prettier"]
+}
