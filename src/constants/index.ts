@@ -1,0 +1,5 @@
+
+export const ActionTypes = {
+	STUDENT_FETCH: 'STUDENT_FETCH',
+	STUDENT_UPDATE: 'STUDENT_UPDATE',
+};
