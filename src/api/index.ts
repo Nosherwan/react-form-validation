@@ -5,7 +5,7 @@ function Api () {
 	var _globalUri = ' https://26bgca2i61.execute-api.us-east-1.amazonaws.com/dev/';
 	var _refreshCallbacks: any[] = [];
 	var _refreshInProgress = false;
-	var _accessToken = '';
+	var _accessToken = '69454440-b631-11e8-b987-557b0ccfcf21';
 	var _refreshToken = '';
 
 	function _queryStringFromObject (api: any, data: any) {
@@ -63,6 +63,7 @@ function Api () {
 			case 'post':
 			case 'put':
 			case 'delete':
+			case 'patch':
 				params.method = options.method;
 				if (options.type !== 'json') {
 					params.headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -259,6 +260,27 @@ function Api () {
 			options = _defaultOptions(endPoint, options);
 			options.type = 'json';
 			options.method = 'post';
+			return _fetch(options)
+				.then(function (result) {
+					return (
+						_tokenExpired(result) ?
+							_tokenRefreshFlow(options)
+							: _filterResponse(result)
+					);
+				});
+		},
+
+		/**
+		 * send post request of type JSON
+		 * 
+		 * @param {string} endPoint string
+		 * @param {object} options object
+		 * @return {Object} promise
+		 */
+		patchJSON: function (endPoint: any, options: any) {
+			options = _defaultOptions(endPoint, options);
+			options.type = 'json';
+			options.method = 'patch';
 			return _fetch(options)
 				.then(function (result) {
 					return (
