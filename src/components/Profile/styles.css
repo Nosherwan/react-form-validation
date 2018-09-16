@@ -30,3 +30,8 @@
 .disabled_submit_button {
   background: darkgrey;
 }
+
+.message {
+  margin: 0 auto;
+  text-align: center;
+}

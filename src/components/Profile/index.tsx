@@ -35,17 +35,25 @@ class Profile extends Component<IProfile, any> {
 					touched: false
 				},
 				available: {
-					error:'',
+					error: '',
 					touched: false
 				}
 			},
-			checkBox: props.profile.get('available')
+			checkBox: props.profile.get('available'),
+			message: ''
 		}
 	}
 
 	componentWillMount() {
-		if(!this.props.profile.get('email')){
+		if (!this.props.profile.get('email')) {
 			this.props.getUser();
+		}
+	}
+
+	componentDidUpdate(prevProps: any) {
+		const available = this.props.profile.get('available')
+		if (available !== prevProps.profile.get('available')) {
+			this.setState({ checkBox: available })
 		}
 	}
 
@@ -56,7 +64,7 @@ class Profile extends Component<IProfile, any> {
 		const fieldValue = e.target.value;
 
 		const error = validateField(fieldName, fieldValue);
-		
+
 		const currentValidation = {
 			...validation, ...{ [fieldName]: { error, touched: true } }
 		};
@@ -84,21 +92,24 @@ class Profile extends Component<IProfile, any> {
 
 		this.setState(newState);
 	}
-	
+
 	onSubmit = (e: ChangeEvent<any>) => {
 		e.preventDefault();
 		const { validation } = this.state;
-		const data: any = {id: this.props.profile.get('id')};
+		const data: any = { id: this.props.profile.get('id') };
 		validation['available'].touched && (data['available'] = this.state.checkBox);
 		validation['firstName'].touched && (data['firstName'] = this.firstName.value);
 		validation['lastName'].touched && (data['lastName'] = this.lastName.value);
 		validation['email'].touched && (data['email'] = this.email.value);
 
-		this.props.updateUser(data)
+		this.props.updateUser(data).then(() => {
+			this.setState({ message: 'Success' })
+			setTimeout(() => this.setState({ message: '' }), 5000)
+		})
 	}
 
 	render() {
-		const { validation, checkBox } = this.state;
+		const { validation, checkBox, message } = this.state;
 		const { profile } = this.props;
 		const firstName = profile.get('firstName');
 		const lastName = profile.get('lastName');
@@ -107,6 +118,7 @@ class Profile extends Component<IProfile, any> {
 			styles.submit_button :
 			styles.disabled_submit_button;
 
+		console.log('Profile_status_', this.state)
 		return (
 			<div>
 				<h2>Change Profile</h2>
@@ -145,6 +157,7 @@ class Profile extends Component<IProfile, any> {
 							onChange={this.checkBoxHandler} />
 					</div>
 					<button type="submit" className={buttonStyle}> Submit </button>
+					{message && <div className={styles.message}>{message}</div>}
 				</form>
 			</div>
 		);
