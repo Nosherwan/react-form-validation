@@ -1,6 +1,6 @@
 {
-  "name": "stock-manager",
-  "version": "1.0.0",
+  "name": "tech-test-front-end",
+  "version": "0.1.0",
   "main": "src/index.js",
   "scripts": {
     "build": "NODE_ENV=production DEBUG=false webpack -p",
@@ -82,7 +82,7 @@
     "write-file-webpack-plugin": "^4.0.2"
   },
   "keywords": [],
-  "author": "none specified",
+  "author": "Nosh Ghazanfar",
   "license": "none specified",
   "private": true
 }

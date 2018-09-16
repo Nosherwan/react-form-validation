@@ -118,7 +118,6 @@ class Profile extends Component<IProfile, any> {
 			styles.submit_button :
 			styles.disabled_submit_button;
 
-		console.log('Profile_status_', this.state)
 		return (
 			<div>
 				<h2>Change Profile</h2>

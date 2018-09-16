@@ -13,7 +13,6 @@ export function profile(state = Map({
   switch (action.type) {
     case ActionTypes.STUDENT_FETCH + _FULFILLED:
     case ActionTypes.STUDENT_UPDATE + _FULFILLED:
-      console.log('action', action)
       return state.withMutations(state => {
         state.set('id', action.payload.id || '');
         state.set('firstName', action.payload.firstName || '');
