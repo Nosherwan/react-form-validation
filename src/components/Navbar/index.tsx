@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
+import { Status } from '../Status';
 
 const styles = require('./styles.css');
 
@@ -34,6 +35,7 @@ class NavbarComponent extends Component<INavbar, any> {
           >
             {btn.name}
           </button>)}
+          <Status/>
       </div>
     );
   }
