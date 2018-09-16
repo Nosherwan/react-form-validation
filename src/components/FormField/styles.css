@@ -1,0 +1,30 @@
+.field_container *{
+  font-family: Helvetica, sans-serif;
+  font-size: 1em;
+  padding: 4px;
+}
+
+.field {
+  border: 2px solid lightblue;
+  border-radius: .25em;
+}
+
+.invalid_field {
+  border: 2px solid red;
+  border-radius: .25em;
+}
+
+.field_container {
+  /* border: 2px solid brown; */
+  display: flex;
+  flex-flow: column wrap;
+  justify-items: center;
+  justify-content: center;
+  align-content: space-between;
+  padding: 2px; 
+}
+
+
+.field_container input[type=text] {
+  /* padding: 2px; */
+}

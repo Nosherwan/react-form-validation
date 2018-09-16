@@ -46,7 +46,6 @@ function Api () {
 		var params: { [key: string]: any } = {
 			method: '',
 			headers: {
-				'Accept': 'application/vnd.simplywallst.v2',
 			}
 		};
 
@@ -56,7 +55,7 @@ function Api () {
 		}
 
 		if (options.authorization) {
-			params.headers['Authorization'] = 'Bearer ' + _accessToken;
+			params.headers['Authorization'] = _accessToken;
 		}
 
 		switch (options.method) {

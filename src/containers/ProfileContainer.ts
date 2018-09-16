@@ -6,17 +6,12 @@ import {
 	updateUser,
 } from '../actions/profile';
 
-const makeMapStateToProps = () => {
+const mapStateToProps = (state: any) => {
+	const { profile } = state;
 
-	const mapStateToProps = (state: any) => {
-		const { Profile } = state;
-		
-		return {
-			Profile
-		};
+	return {
+		profile
 	};
-
-	return mapStateToProps;
 };
 
 const mapDispatchToProps = {
@@ -24,4 +19,4 @@ const mapDispatchToProps = {
 	updateUser
 };
 
-export default connect(makeMapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 
-class Main extends Component {
+interface IMain {
+  profile: any
+  getUser: any
+}
+class Main extends Component<IMain,any> {
 
 	constructor (props: any) {
 		super(props)
 	}
 
 	componentWillMount() {
+		if(!this.props.profile.get('email')){
+			this.props.getUser();
+		}
 	}
 
 	render() {

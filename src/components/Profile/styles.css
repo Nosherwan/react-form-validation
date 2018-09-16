@@ -1,0 +1,17 @@
+.submit_button {
+  border: 2px solid blue;
+}
+
+.disabled_submit_button {
+  border: 2px solid darkgrey;
+}
+.profile_form {
+  border: 1px solid lightgrey;
+  border-radius: .25em;
+  display: flex;
+  flex-flow: column wrap;
+  justify-items: center;
+  justify-content: center;
+  align-content: space-between;
+  padding: 0px; 
+}

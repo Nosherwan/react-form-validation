@@ -9,7 +9,7 @@ function patchUser(data: any) {
   return Api.getJSON(`student`, { authorization: true, data })
 }
 
-function getUser({ share }: { share: any }) {
+function getUser() {
   return {
     type: ActionTypes.STUDENT_FETCH,
     payload: fetchUser()
