@@ -1,5 +1,25 @@
 # Hatch Engineering Technical Test 🛠
 
+
+## Instructions
+
+Please follow these instructions to install and test the solution.
+
+1. `yarn install` to install all the packages & dependencies.
+2. `yarn start` to start the application that is servered on localhost:8081.
+3. the token is copied in source which is a bad practice but unfortunatley as there is no proper authentication method there is no other way to pass it to the API layer.
+
+## Assumptions
+
+1. To spend reasonable amount of time I only did minimum styling.
+2. API layer is my own code around whatwg-fetch module so dont mind that.
+3. I use typescript but again to save time I have used `any` type alot, not a good practice.
+4. I could have used a form validation library but in alot of the projects I do teams consider them bloated and end up using custom form validation library or code. The code I have used here is what I have used in the past, it is minimal form validation with smaller field validation components its much more practical, however may not be enough for a form heavy applicaiton.
+5. I have not catered for alot of cases such as request failures due to lack of time.
+6. For local storage I have used a standard way of storing the whole redux store in local storage, Dan Abramov approved way of doing it.
+7. Even though the task suggested forking, it was not enable for me on Github, so I had to create a branch and will send a pull request instead.
+8. Let me know if you have any other questions.
+
 ## Purpose
 
 Hi and welcome to the Hatch Engineering technical test. The purpose of this task is to get a sense for your technical ability and how you work with tools that are similar to what we use here at Hatch. Good luck!
