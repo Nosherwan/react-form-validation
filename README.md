@@ -17,7 +17,7 @@ Please follow these instructions to install and test the solution.
 4. I could have used a form validation library but in alot of the projects I do teams consider them bloated and end up using custom form validation library or code. The code I have used here is what I have used in the past, it is minimal form validation with smaller field validation components its much more practical, however may not be enough for a form heavy applicaiton.
 5. I have not catered for alot of cases such as request failures due to lack of time.
 6. For local storage I have used a standard way of storing the whole redux store in local storage, Dan Abramov approved way of doing it.
-7. Even though the task suggested forking, it was not enable for me on Github, so I had to create a branch and will send a pull request instead.
+7. Even though the task suggested forking, it was not enabled for me on Github, so I had to create a branch and will send a pull request instead.
 8. Let me know if you have any other questions.
 
 ## Purpose
