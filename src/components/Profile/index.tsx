@@ -6,6 +6,7 @@ const styles = require('./styles.css');
 
 interface IProfile {
 	profile: any
+	getUser: any
 	updateUser: any
 }
 
@@ -14,6 +15,7 @@ class Profile extends Component<IProfile, any> {
 	firstName: any
 	lastName: any
 	email: any
+	available: any
 
 	constructor(props: any) {
 		super(props);
@@ -31,12 +33,20 @@ class Profile extends Component<IProfile, any> {
 				email: {
 					error: '',
 					touched: false
+				},
+				available: {
+					error:'',
+					touched: false
 				}
-			}
+			},
+			checkBox: props.profile.get('available')
 		}
 	}
 
 	componentWillMount() {
+		if(!this.props.profile.get('email')){
+			this.props.getUser();
+		}
 	}
 
 	changeHandler = (e: ChangeEvent<any>): void => {
@@ -63,34 +73,43 @@ class Profile extends Component<IProfile, any> {
 		}
 	}
 
+	checkBoxHandler = (e: ChangeEvent<any>): void => {
+		const { validation, checkBox } = this.state;
+		const currentValidation = { ...validation, ...{ available: { touched: true } } };
+		const newState = {
+			valid: validateForm(currentValidation),
+			validation: currentValidation,
+			checkBox: !checkBox
+		};
+
+		this.setState(newState);
+	}
+	
 	onSubmit = (e: ChangeEvent<any>) => {
 		e.preventDefault();
-		const firstName = this.firstName.value;
-		const lastName = this.lastName.value;
-		const email = this.email.value;
+		const { validation } = this.state;
+		const data: any = {};
+		validation['available'].touched && (data['available'] = this.state.checkBox);
+		validation['firstName'].touched && (data['firstName'] = this.firstName.value);
+		validation['lastName'].touched && (data['lastName'] = this.lastName.value);
+		validation['email'].touched && (data['email'] = this.email.value);
 
-		console.log('firstName', firstName);
-		console.log('lastName', lastName);
-		console.log('email', email);
-
+		this.props.updateUser(data)
 	}
 
 	render() {
-		const { validation } = this.state;
+		const { validation, checkBox } = this.state;
 		const { profile } = this.props;
 		const firstName = profile.get('firstName');
 		const lastName = profile.get('lastName');
 		const email = profile.get('email');
-		const available = profile.get('available');
 		const buttonStyle = this.state.valid ?
 			styles.submit_button :
 			styles.disabled_submit_button;
 
-		console.log('_button_', this.state.valid);
-
 		return (
 			<div>
-				<div>Change Profile</div>
+				<h2>Change Profile</h2>
 				<form onSubmit={this.onSubmit} className={styles.profile_form}>
 					<FormField
 						label='First Name'
@@ -116,6 +135,15 @@ class Profile extends Component<IProfile, any> {
 						error={validation.email.error}
 						changeHandler={this.changeHandler}
 					/>
+					<div>
+						<label>Select Status</label>
+						<input
+							ref={(ref: any) => this.available = ref}
+							name="available"
+							type="checkbox"
+							checked={checkBox}
+							onChange={this.checkBoxHandler} />
+					</div>
 					<button type="submit" className={buttonStyle}> Submit </button>
 				</form>
 			</div>

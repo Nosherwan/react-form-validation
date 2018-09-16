@@ -1,6 +1,4 @@
 .field_container *{
-  font-family: Helvetica, sans-serif;
-  font-size: 1em;
   padding: 4px;
 }
 
@@ -15,13 +13,12 @@
 }
 
 .field_container {
-  /* border: 2px solid brown; */
   display: flex;
   flex-flow: column wrap;
   justify-items: center;
   justify-content: center;
   align-content: space-between;
-  padding: 2px; 
+  padding: 4px; 
 }
 
 

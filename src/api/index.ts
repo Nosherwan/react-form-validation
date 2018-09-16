@@ -63,7 +63,7 @@ function Api () {
 			case 'put':
 			case 'delete':
 			case 'patch':
-				params.method = options.method;
+				params.method = options.method.toUpperCase();
 				if (options.type !== 'json') {
 					params.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 					params.body = _queryStringFromObject(null, options.data);

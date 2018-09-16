@@ -6,7 +6,7 @@ function fetchUser() {
 }
 
 function patchUser(data: any) {
-  return Api.getJSON(`student`, { authorization: true, data })
+  return Api.patchJSON(`student`, { authorization: true, data })
 }
 
 function getUser() {
@@ -16,7 +16,7 @@ function getUser() {
   };
 }
 
-function updateUser({ data }: { data: any}) {
+function updateUser( data: any) {
   return {
     type: ActionTypes.STUDENT_UPDATE,
     payload: patchUser(data)
