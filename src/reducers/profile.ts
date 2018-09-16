@@ -4,6 +4,7 @@ import { Map } from 'immutable';
 const _FULFILLED = '_FULFILLED';
 
 export function profile(state = Map({
+  id: '',
   firstName: '',
   lastName: '',
   email: '',
@@ -14,6 +15,7 @@ export function profile(state = Map({
     case ActionTypes.STUDENT_UPDATE + _FULFILLED:
       console.log('action', action)
       return state.withMutations(state => {
+        state.set('id', action.payload.id || '');
         state.set('firstName', action.payload.firstName || '');
         state.set('lastName', action.payload.lastName || '');
         state.set('email', action.payload.email || '');

@@ -88,7 +88,7 @@ class Profile extends Component<IProfile, any> {
 	onSubmit = (e: ChangeEvent<any>) => {
 		e.preventDefault();
 		const { validation } = this.state;
-		const data: any = {};
+		const data: any = {id: this.props.profile.get('id')};
 		validation['available'].touched && (data['available'] = this.state.checkBox);
 		validation['firstName'].touched && (data['firstName'] = this.firstName.value);
 		validation['lastName'].touched && (data['lastName'] = this.lastName.value);
