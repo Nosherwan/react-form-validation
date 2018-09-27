@@ -1,4 +1,4 @@
-# Hatch Engineering Technical Test 🛠
+# Form validation using React.js, Redux & local storage 🛠
 
 
 ## Instructions
