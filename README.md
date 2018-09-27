@@ -18,25 +18,14 @@ Please follow these instructions to install and test the solution.
 5. I have not catered for alot of cases such as request failures due to lack of time.
 6. For local storage I have used a standard way of storing the whole redux store in local storage, Dan Abramov approved way of doing it.
 7. Even though the task suggested forking, it was not enabled for me on Github, so I had to create a branch and will send a pull request instead.
-8. Let me know if you have any other questions.
-
-## Purpose
-
-Hi and welcome to the Hatch Engineering technical test. The purpose of this task is to get a sense for your technical ability and how you work with tools that are similar to what we use here at Hatch. Good luck!
-
-## The Problem
-
-At Hatch we use data science to automatically match students to professional roles. We always want the student to keep their personal information up-to-date, especially their availability. As we only want to be showing roles to available students and available students to hiring managers 
+8. Let me know if you have any other questions. 
 
 ## The Task
 
-In order to solve this problem we want to provide Students with the ability to edit their profile (API provided) , make it easy for them to see their availability status throughout the site and to let them easily toggle their availability on or off from where ever they are in the site.
-
-Don't worry if you feel as though some of this task is vague, it's been written that way intentionally so that you have the freedom to approach the task however you want. 
-
-Fork this project to a private repository, or start from scratch if you prefer and create a working React app that solves the problem as described above.
+Provide users with the ability to edit their profile (API provided) , make it easy for them to see their availability status throughout the site and to let them easily toggle their availability on or off from where ever they are in the site.
 
 ### API
+(The API may have been taken of at a later stage)
 
 The API you'll need to complete this task is located at: https://26bgca2i61.execute-api.us-east-1.amazonaws.com/dev
 
