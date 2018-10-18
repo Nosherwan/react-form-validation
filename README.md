@@ -17,23 +17,11 @@ Please follow these instructions to install and test the solution.
 4. I could have used a form validation library but in alot of the projects I do teams consider them bloated and end up using custom form validation library or code. The code I have used here is what I have used in the past, it is minimal form validation with smaller field validation components its much more practical, however may not be enough for a form heavy applicaiton.
 5. I have not catered for alot of cases such as request failures due to lack of time.
 6. For local storage I have used a standard way of storing the whole redux store in local storage, Dan Abramov approved way of doing it.
-7. Even though the task suggested forking, it was not enabled for me on Github, so I had to create a branch and will send a pull request instead.
-8. Let me know if you have any other questions. 
 
 ## The Task
 
 Provide users with the ability to edit their profile (API provided) , make it easy for them to see their availability status throughout the site and to let them easily toggle their availability on or off from where ever they are in the site.
 
-### API
-(The API may have been taken of at a later stage)
-
-The API you'll need to complete this task is located at: https://26bgca2i61.execute-api.us-east-1.amazonaws.com/dev
-
-The API is a simple one that allows you to get a student object and update it. 
-
-### Authentication
-
-To authenticate with the API you'll need to set an `Authorization` header on all requests and pass the key you will have been given as the value. This key identifies a single student (you).
 
 ### Endpoints
 
