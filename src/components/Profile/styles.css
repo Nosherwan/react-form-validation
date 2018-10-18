@@ -35,3 +35,7 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.profile_form input:focus {
+  outline:none;
+}
