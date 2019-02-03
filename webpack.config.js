@@ -44,12 +44,13 @@ module.exports = env => {
 	env = { options: process.env.NODE_ENV };
 
 	console.log('process.env=', process.env.NODE_ENV);
-
+	process.traceDeprecation = true;
 	if (env && env.options && env.options === 'development') {
 		prodEntries = devEntries.concat(prodEntries);
 	}
 
 	return {
+		mode: env.options,
 		// devServer is for dev only
 		devServer: {
 			compress: true,
@@ -180,11 +181,6 @@ module.exports = env => {
 			new webpack.NamedModulesPlugin(),
 			new webpack.HotModuleReplacementPlugin(),
 			new ExtractTextPlugin('styles.css'),
-			new webpack.optimize.CommonsChunkPlugin({
-				name: 'vendor',
-				minChunks: Infinity,
-				filename: '[name].[hash].js',
-			}),
 			new HtmlWebpackPlugin({
 				template: path.join(__dirname, 'src/index.html'),
 				filename: 'index.html',
