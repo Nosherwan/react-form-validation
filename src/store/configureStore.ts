@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose, Store } from 'redux';
-import { appReducer } from '../reducers';
-import { routerMiddleware } from 'react-router-redux';
+import { createRootReducer } from '../reducers';
+import { routerMiddleware } from 'connected-react-router';
 import { history } from '../navigation/history';
 import thunk from 'redux-thunk';
 import { loadState, saveState } from './localStorage';
@@ -15,10 +15,7 @@ interface Window {
 }
 declare const window: Window
 
-interface Module {
-	hot: any
-}
-declare const module: Module
+
 
 /**
  * configures the store before creation and after creation
@@ -33,7 +30,7 @@ export function configureStore(): Store<any> {
 	const middleware = [
 		routMiddleware,
 		thunk,
-		promiseMiddleware()
+		promiseMiddleware
 	];
 
 	const composeEnhancers = typeof window === 'object' &&
@@ -47,19 +44,19 @@ export function configureStore(): Store<any> {
 	);
 
 	const store = createStore(
-		appReducer,
+		createRootReducer(history),
 		persistedState,
 		enhancer
 	);
 
-	if (module.hot) {
-		// Enable Webpack hot module replacement for reducers
-		module.hot.accept('../reducers', () => {
-			const nextReducer = require('../reducers').default;
+	// if (module.hot) {
+	// 	// Enable Webpack hot module replacement for reducers
+	// 	module.hot.accept('../reducers', () => {
+	// 		// const nextReducer = require('../reducers').createRootReducer();
 
-			store.replaceReducer(nextReducer);
-		});
-	}
+	// 		store.replaceReducer(createRootReducer(history));
+	// 	});
+	// }
 
 	store.subscribe(throttle(() => {
 		saveState(store.getState());

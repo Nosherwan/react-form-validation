@@ -120,7 +120,7 @@ class Profile extends Component<IProfile, any> {
 
 		return (
 			<div>
-				<h2>Change Profile</h2>
+				<h2>Change Profile </h2>
 				<form onSubmit={this.onSubmit} className={styles.profile_form}>
 					<FormField
 						label='First Name'
