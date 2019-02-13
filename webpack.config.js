@@ -27,13 +27,11 @@ const PATHS = {
 };
 
 const devEntries = [
-	'react-hot-loader/patch',
 	'webpack-dev-server/client?http://0.0.0.0:8081',	//DEV only
-	'webpack/hot/only-dev-server',											//DEV only
 ];
 
 let prodEntries = [
-	'@babel/polyfill',
+	// '@babel/polyfill',
 	'es6-promise',
 	'whatwg-fetch',
 	PATHS.src
@@ -71,7 +69,7 @@ module.exports = env => {
 				'react-redux',
 				'react-router',
 				'react-router-dom',
-				'react-router-redux',
+				'connected-react-router',
 				'react-transition-group',
 				'redux',
 				'redux-thunk',
@@ -178,8 +176,6 @@ module.exports = env => {
 		plugins: [
 			new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG']),
 			new CleanWebpackPlugin(pathsToClean, cleanOptions),
-			new webpack.NamedModulesPlugin(),
-			new webpack.HotModuleReplacementPlugin(),
 			new ExtractTextPlugin('styles.css'),
 			new HtmlWebpackPlugin({
 				template: path.join(__dirname, 'src/index.html'),

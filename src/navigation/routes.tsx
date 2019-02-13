@@ -1,14 +1,18 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import ProfileContainer from '../containers/ProfileContainer';
 import MainContainer from '../containers/MainContainer';
 
 const MainRoutes = () => {
 	return (
-		<div>
+		<Switch>
 			<Route exact path='/' component={MainContainer} />
 			<Route path='/profile' component={ProfileContainer} />
-		</div>
+			{/* <Route
+        path="/about"
+        render={props => <About {...props} extra={someVariable} />}
+      /> */}
+		</Switch>
 	);
 };
 
