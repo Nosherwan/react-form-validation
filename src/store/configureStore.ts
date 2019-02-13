@@ -49,15 +49,6 @@ export function configureStore(): Store<any> {
 		enhancer
 	);
 
-	// if (module.hot) {
-	// 	// Enable Webpack hot module replacement for reducers
-	// 	module.hot.accept('../reducers', () => {
-	// 		// const nextReducer = require('../reducers').createRootReducer();
-
-	// 		store.replaceReducer(createRootReducer(history));
-	// 	});
-	// }
-
 	store.subscribe(throttle(() => {
 		saveState(store.getState());
 	}, 1000));

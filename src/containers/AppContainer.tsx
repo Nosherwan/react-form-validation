@@ -5,7 +5,6 @@ import { history } from '../navigation/history';
 import { configureStore } from '../store/configureStore';
 import Routes from '../navigation/routes';
 import { Navbar } from '../components/Navbar';
-// import { hot } from 'react-hot-loader/root'
 
 class AppContainer extends PureComponent {
 

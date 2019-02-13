@@ -27,9 +27,7 @@ const PATHS = {
 };
 
 const devEntries = [
-	// 'react-hot-loader/patch', // not required anymore
 	'webpack-dev-server/client?http://0.0.0.0:8081',	//DEV only
-	// 'webpack/hot/only-dev-server',											//DEV only
 ];
 
 let prodEntries = [
@@ -178,8 +176,6 @@ module.exports = env => {
 		plugins: [
 			new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG']),
 			new CleanWebpackPlugin(pathsToClean, cleanOptions),
-			// new webpack.NamedModulesPlugin(),
-			// new webpack.HotModuleReplacementPlugin(),
 			new ExtractTextPlugin('styles.css'),
 			new HtmlWebpackPlugin({
 				template: path.join(__dirname, 'src/index.html'),
