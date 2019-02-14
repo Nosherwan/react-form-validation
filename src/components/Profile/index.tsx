@@ -44,7 +44,7 @@ class Profile extends Component<IProfile, any> {
 		}
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		if (!this.props.profile.get('email')) {
 			this.props.getUser();
 		}
