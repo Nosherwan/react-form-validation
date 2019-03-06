@@ -5,7 +5,7 @@
   "scripts": {
     "build": "NODE_ENV=production DEBUG=false webpack",
     "start": "NODE_ENV=development DEBUG=true webpack-dev-server -d --host 0.0.0.0 --disableHostCheck=true",
-    "test": "echo \"No tests (yet!) -- submit a PR?\" && exit 0"
+    "test": "npx jest"
   },
   "dependencies": {
     "@babel/polyfill": "7.2.5",
