@@ -8,6 +8,7 @@ Please follow these instructions to install and test the solution.
 1. `yarn install` to install all the packages & dependencies.
 2. `yarn start` to start the application that is servered on localhost:8081.
 3. the token is copied in source which is a bad practice but unfortunatley as there is no proper authentication method there is no other way to pass it to the API layer.
+4. for test run `yarn test`
 
 ## Assumptions
 
