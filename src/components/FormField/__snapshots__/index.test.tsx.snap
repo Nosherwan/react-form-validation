@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormField should render correctly in "debug" mode 1`] = `
+exports[`FormField should render correctly 1`] = `
 <div
   className="field_container"
 >
