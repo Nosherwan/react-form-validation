@@ -163,4 +163,4 @@ class Profile extends Component<IProfile, any> {
 	}
 }
 
-export { Profile }
+export { Profile, IProfile }
