@@ -64,4 +64,13 @@ describe('FormField', () => {
     expect(args.target.value).toEqual('hello 🌏');
 
   });
+
+  it('if error is passed it should be shown', () => {
+    const props = getFormFieldProps();
+    props.error = 'invalid';
+    const component = shallow(<FormField {...props} />);
+    const errorDiv = component.find('div');
+    expect(errorDiv.contains('invalid')).toBeTruthy();
+  });
+
 });
