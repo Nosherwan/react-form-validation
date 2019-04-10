@@ -63,23 +63,6 @@ module.exports = env => {
 		// devtool: 'inline-source-map',
 		entry: {
 			'./www': prodEntries,
-			vendor: [
-				'react',
-				'react-dom',
-				'react-redux',
-				'react-router',
-				'react-router-dom',
-				'connected-react-router',
-				'react-transition-group',
-				'redux',
-				'redux-thunk',
-				'reselect',
-				'immutable',
-				'whatwg-fetch',
-				'es6-promise',
-				'history',
-				'keymirror',
-			],
 		},
 		output: {
 			filename: 'bundle.[hash].js', //destination file name
