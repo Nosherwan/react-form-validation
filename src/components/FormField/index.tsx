@@ -3,7 +3,7 @@ import debounce from 'lodash.debounce';
 
 const styles = require('./styles.css');
 
-interface IFormField {
+export interface IFormField {
 	label: string
 	name: any
 	value: string
@@ -12,7 +12,7 @@ interface IFormField {
 	changeHandler: (e: ChangeEvent<any>) => void
 }
 
-class FormField extends Component<IFormField, any> {
+export class FormField extends Component<IFormField, any> {
 
 	changeHandler: (e: ChangeEvent<any>) => void
 
@@ -51,5 +51,3 @@ class FormField extends Component<IFormField, any> {
 		);
 	}
 }
-
-export { FormField, IFormField }
