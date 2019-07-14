@@ -27,13 +27,11 @@ const PATHS = {
 };
 
 const devEntries = [
-	'react-hot-loader/patch',
 	'webpack-dev-server/client?http://0.0.0.0:8081',	//DEV only
-	'webpack/hot/only-dev-server',											//DEV only
 ];
 
 let prodEntries = [
-	'@babel/polyfill',
+	// '@babel/polyfill',
 	'es6-promise',
 	'whatwg-fetch',
 	PATHS.src
@@ -44,12 +42,13 @@ module.exports = env => {
 	env = { options: process.env.NODE_ENV };
 
 	console.log('process.env=', process.env.NODE_ENV);
-
+	process.traceDeprecation = true;
 	if (env && env.options && env.options === 'development') {
 		prodEntries = devEntries.concat(prodEntries);
 	}
 
 	return {
+		mode: env.options,
 		// devServer is for dev only
 		devServer: {
 			compress: true,
@@ -64,23 +63,6 @@ module.exports = env => {
 		// devtool: 'inline-source-map',
 		entry: {
 			'./www': prodEntries,
-			vendor: [
-				'react',
-				'react-dom',
-				'react-redux',
-				'react-router',
-				'react-router-dom',
-				'react-router-redux',
-				'react-transition-group',
-				'redux',
-				'redux-thunk',
-				'reselect',
-				'immutable',
-				'whatwg-fetch',
-				'es6-promise',
-				'history',
-				'keymirror',
-			],
 		},
 		output: {
 			filename: 'bundle.[hash].js', //destination file name
@@ -177,14 +159,7 @@ module.exports = env => {
 		plugins: [
 			new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG']),
 			new CleanWebpackPlugin(pathsToClean, cleanOptions),
-			new webpack.NamedModulesPlugin(),
-			new webpack.HotModuleReplacementPlugin(),
 			new ExtractTextPlugin('styles.css'),
-			new webpack.optimize.CommonsChunkPlugin({
-				name: 'vendor',
-				minChunks: Infinity,
-				filename: '[name].[hash].js',
-			}),
 			new HtmlWebpackPlugin({
 				template: path.join(__dirname, 'src/index.html'),
 				filename: 'index.html',

@@ -4,13 +4,13 @@ import { validateForm, validateField } from '../../utilities';
 
 const styles = require('./styles.css');
 
-interface IProfile {
+export interface IProfile {
 	profile: any
 	getUser: any
 	updateUser: any
 }
 
-class Profile extends Component<IProfile, any> {
+export class Profile extends Component<IProfile, any> {
 
 	firstName: any
 	lastName: any
@@ -44,7 +44,7 @@ class Profile extends Component<IProfile, any> {
 		}
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		if (!this.props.profile.get('email')) {
 			this.props.getUser();
 		}
@@ -120,7 +120,7 @@ class Profile extends Component<IProfile, any> {
 
 		return (
 			<div>
-				<h2>Change Profile</h2>
+				<h2>Change Profile </h2>
 				<form onSubmit={this.onSubmit} className={styles.profile_form}>
 					<FormField
 						label='First Name'
@@ -162,5 +162,3 @@ class Profile extends Component<IProfile, any> {
 		);
 	}
 }
-
-export { Profile }

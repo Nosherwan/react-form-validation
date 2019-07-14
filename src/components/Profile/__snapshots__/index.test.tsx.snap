@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile should render correctly 1`] = `
+<div>
+  <h2>
+    Change Profile 
+  </h2>
+  <form
+    className="profile_form"
+    onSubmit={[Function]}
+  >
+    <FormField
+      changeHandler={[Function]}
+      error=""
+      innerRef={[Function]}
+      label="First Name"
+      name="firstName"
+      value=""
+    />
+    <FormField
+      changeHandler={[Function]}
+      error=""
+      innerRef={[Function]}
+      label="Last Name"
+      name="lastName"
+      value=""
+    />
+    <FormField
+      changeHandler={[Function]}
+      error=""
+      innerRef={[Function]}
+      label="Email"
+      name="email"
+      value=""
+    />
+    <div>
+      <label>
+        Select Status
+      </label>
+      <input
+        checked=""
+        name="available"
+        onChange={[Function]}
+        type="checkbox"
+      />
+    </div>
+    <button
+      className="disabled_submit_button"
+      type="submit"
+    >
+       Submit 
+    </button>
+  </form>
+</div>
+`;

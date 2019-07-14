@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField should render correctly 1`] = `
+<div
+  className="field_container"
+>
+  <label>
+    First Name
+  </label>
+  <input
+    className="field"
+    defaultValue=""
+    name="firstName"
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;

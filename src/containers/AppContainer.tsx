@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter } from 'connected-react-router';
 import { history } from '../navigation/history';
 import { configureStore } from '../store/configureStore';
 import Routes from '../navigation/routes';
 import { Navbar } from '../components/Navbar';
-
 
 class AppContainer extends PureComponent {
 
